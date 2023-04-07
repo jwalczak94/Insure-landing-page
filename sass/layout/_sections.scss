@@ -1,0 +1,111 @@
+@use "../mixins" as m;
+
+main {
+  @include m.main-content;
+  margin-bottom: 8.75rem;
+
+  @include m.respond(tab-land) {
+    margin-bottom: 9.375rem;
+  }
+}
+
+.section-snippets {
+  padding-top: 2.5rem;
+  margin-bottom: 8.75rem;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+
+    @include m.respond(tab-port) {
+      left: 0;
+      transform: translateX(0);
+    }
+  }
+
+  @include m.respond(tab-port) {
+    padding-top: 4rem;
+    margin-bottom: 9.875rem;
+    text-align: left;
+  }
+
+  &__boxes {
+    @include m.flex-center(3.5rem, column);
+    margin-top: 5rem;
+
+    @include m.respond(tab-port) {
+      flex-direction: row;
+      gap: 1.875rem;
+      margin-top: 6rem;
+    }
+  }
+
+  .box {
+    display: grid;
+    gap: 1rem;
+    max-width: 350px;
+
+    img {
+      margin-bottom: 1rem;
+      margin-inline: auto;
+
+      @include m.respond(tab-port) {
+        margin-inline: 0;
+      }
+    }
+  }
+}
+
+.section-cta {
+  display: grid;
+  justify-content: center;
+  gap: 2.5rem;
+
+  background-color: var(--bg-card);
+  background-image: url("./images/bg-pattern-how-we-work-mobile.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top right;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+
+  @include m.respond(tab-port) {
+    background-image: url("./images/bg-pattern-how-we-work-desktop.svg");
+
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 4.25rem 2.5rem;
+    text-align: left;
+    align-items: center;
+  }
+
+  @include m.respond(tab-land) {
+    padding: 4.25rem 5rem;
+  }
+
+  h2 {
+    color: var(--white);
+    font-size: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
+
+    @include m.respond(tab-port) {
+      max-width: 475px;
+    }
+  }
+
+  .btn {
+    margin-inline: auto;
+
+    @include m.respond(tab-land) {
+      margin-inline: 0;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@use "../mixins" as m;
+
+.footer {
+  background-color: var(--bg-footer);
+  background-image: url("./images/bg-pattern-footer-mobile.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  padding: 5.5rem 0;
+
+  @include m.respond(phone) {
+    background-image: url("./images/bg-pattern-footer-desktop.svg");
+  }
+
+  @include m.respond(tab-land) {
+    padding: 4rem 0;
+  }
+
+  &__content {
+    @include m.main-content;
+  }
+
+  &__content-1 {
+    @include m.flex-center(2rem, column);
+    border-bottom: 1px solid var(--grey-100);
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    @include m.respond(phone) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include m.respond(tab-land) {
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__content-2 {
+    display: grid;
+    gap: 2rem;
+
+    @include m.respond(phone) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond(tab-port) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.875rem;
+    }
+  }
+
+  &__logo {
+    height: 1.125rem;
+    margin-inline: auto;
+
+    @include m.respond(phone) {
+      margin-inline: 0;
+    }
+  }
+
+  &__socials {
+    @include m.flex-center(1rem, row);
+    justify-content: center;
+
+    &__link {
+      color: var(--grey-300);
+      font-size: 1.5rem;
+
+      @media (hover: hover) {
+        &:hover,
+        &:hover i {
+          color: var(--grey-900);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  &__links {
+    @include m.flex-center(0.915rem, column);
+    text-align: center;
+
+    @include m.respond(phone) {
+      text-align: left;
+    }
+
+    &__header {
+      margin-bottom: 1.1rem;
+    }
+
+    &__link {
+      color: var(--grey-700);
+      max-width: max-content;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: var(--grey-700);
+        transition: all 0.3s;
+      }
+
+      @media (hover: hover) {
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

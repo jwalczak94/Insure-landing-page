@@ -1,0 +1,45 @@
+@use "mixins" as m;
+
+.btn {
+  text-transform: uppercase;
+  text-align: center;
+  border: 1.5px solid var(--white);
+  color: var(--white);
+}
+
+.btn-primary {
+  display: inline-block;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  width: 10rem;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--grey-900);
+      background-color: var(--white);
+    }
+  }
+}
+
+.btn-secondary {
+  display: block;
+  width: 20rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+
+  @include m.respond(tab-port) {
+    border: 1.5px solid var(--grey-900);
+    color: var(--grey-900);
+
+    line-height: 2.5rem;
+    height: 2.5rem;
+    width: 10rem;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--white) !important;
+      background-color: var(--grey-900);
+    }
+  }
+}

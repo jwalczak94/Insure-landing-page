@@ -1,0 +1,65 @@
+@use "../mixins" as m;
+
+.navigation {
+  @include m.main-content;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+
+  @include m.flex-center(1rem, row);
+  justify-content: space-between;
+
+  &__icon {
+    @include m.respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__links {
+    @include m.flex-center(1.5rem, column);
+
+    background-image: url("./images/bg-pattern-mobile-nav.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+
+    position: absolute;
+    top: 80px;
+    left: 0;
+    transform: translateY(-150%);
+    background-color: var(--grey-900);
+    height: calc(100vh - 80px);
+    height: calc(100vh - 80px);
+    width: 100%;
+    z-index: 99;
+    padding-top: 2.5rem;
+
+    @include m.respond(tab-port) {
+      background-image: none;
+      position: static;
+      background-color: transparent;
+      transform: translateY(0);
+
+      flex-direction: row;
+      height: auto;
+      width: auto;
+      padding: 0;
+    }
+
+    &__link {
+      color: var(--white);
+      font-size: 1.25rem !important;
+
+      @include m.respond(tab-port) {
+        color: var(--grey-300);
+        font-size: 0.8215rem !important;
+
+        @media (hover: hover) {
+          &:hover {
+            color: var(--grey-900);
+          }
+        }
+      }
+    }
+  }
+}

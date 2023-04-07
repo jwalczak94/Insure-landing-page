@@ -1,0 +1,46 @@
+@use "mixins" as m;
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+  font-family: var(--ff-heading);
+  letter-spacing: -0.014em;
+}
+
+h1,
+h2 {
+  font-size: clamp(3rem, 2.4718rem + 2.2535vw, 4.5rem);
+  line-height: 1;
+
+  @include m.respond(tab-port) {
+    line-height: 4rem;
+  }
+}
+
+h1 {
+  color: var(--white);
+}
+
+h2,
+h3 {
+  color: var(--grey-900);
+}
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.37;
+}
+
+.text-xs {
+  font-size: 0.8125rem;
+  font-weight: 700 !important;
+  letter-spacing: 0.11em !important;
+  text-transform: uppercase !important;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.625rem;
+}
