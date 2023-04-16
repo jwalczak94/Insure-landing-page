@@ -81,8 +81,8 @@
     @include m.flex-center(0.915rem, column);
     text-align: center;
 
-    @include m.respond(phone) {
-      text-align: left;
+    @include m.respond(tab-port) {
+      align-items: flex-start;
     }
 
     &__header {

@@ -27,13 +27,17 @@
   height: 3.5rem;
   line-height: 3.5rem;
 
-  @include m.respond(tab-port) {
+  @include m.respond(phone) {
     border: 1.5px solid var(--grey-900);
     color: var(--grey-900);
 
     line-height: 2.5rem;
     height: 2.5rem;
-    width: 10rem;
+    width: 7.5rem;
+  }
+
+  @include m.respond(tab-port) {
+    width: 9.125rem;
   }
 
   @media (hover: hover) {

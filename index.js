@@ -8,9 +8,13 @@ mobileIcon.addEventListener("click", function () {
 
   if (navLinks.classList.contains("active")) {
     mobileIcon.src = "./images/icon-close.svg";
-    document.querySelector("body").classList.add("overflow");
+    document.querySelector("main").classList.add("hide-all");
+    document.querySelector("footer").classList.add("hide-all");
+    document.querySelector("header").classList.add("max-height");
   } else {
     mobileIcon.src = "./images/icon-hamburger.svg";
-    document.querySelector("body").classList.remove("overflow");
+    document.querySelector("main").classList.remove("hide-all");
+    document.querySelector("footer").classList.remove("hide-all");
+    document.querySelector("header").classList.remove("max-height");
   }
 });

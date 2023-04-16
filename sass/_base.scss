@@ -17,9 +17,8 @@
 /*
   3. Allow percentage-based heights in the application
 */
-html,
-body {
-  height: 100%;
+html {
+  min-height: 100%;
 }
 /*
   Typographic tweaks!
@@ -69,13 +68,19 @@ a {
 body {
   color: var(--grey-300);
   font-family: var(--ff-base);
+  height: 100%;
 }
 
 // ADDITIONAL CLASSES
-.overflow {
-  overflow: hidden;
+.hide-all {
+  display: none !important;
 }
 
 .active {
   transform: translateY(0) !important;
+}
+
+.max-height {
+  max-height: 20rem;
+  overflow-y: hidden;
 }

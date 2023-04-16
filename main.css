@@ -19,9 +19,8 @@
 /*
   3. Allow percentage-based heights in the application
 */
-html,
-body {
-  height: 100%;
+html {
+  min-height: 100%;
 }
 
 /*
@@ -73,14 +72,20 @@ a {
 body {
   color: var(--grey-300);
   font-family: var(--ff-base);
+  height: 100%;
 }
 
-.overflow {
-  overflow: hidden;
+.hide-all {
+  display: none !important;
 }
 
 .active {
   transform: translateY(0) !important;
+}
+
+.max-height {
+  max-height: 20rem;
+  overflow-y: hidden;
 }
 
 .btn {
@@ -109,13 +114,18 @@ body {
   height: 3.5rem;
   line-height: 3.5rem;
 }
-@media only screen and (min-width: 48rem) {
+@media only screen and (min-width: 37.5rem) {
   .btn-secondary {
     border: 1.5px solid var(--grey-900);
     color: var(--grey-900);
     line-height: 2.5rem;
     height: 2.5rem;
-    width: 10rem;
+    width: 7.5rem;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .btn-secondary {
+    width: 9.125rem;
   }
 }
 @media (hover: hover) {
@@ -287,9 +297,9 @@ h3 {
   align-items: center;
   text-align: center;
 }
-@media only screen and (min-width: 37.5rem) {
+@media only screen and (min-width: 48rem) {
   .footer__links {
-    text-align: left;
+    align-items: flex-start;
   }
 }
 .footer__links__header {
@@ -513,7 +523,7 @@ h3 {
     padding-bottom: 1.25rem;
   }
 }
-@media only screen and (min-width: 48rem) {
+@media only screen and (min-width: 37.5rem) {
   .navigation__icon {
     display: none;
   }
@@ -532,13 +542,13 @@ h3 {
   left: 0;
   transform: translateY(-150%);
   background-color: var(--grey-900);
-  height: calc(100vh - 80px);
-  height: calc(100vh - 80px);
+  min-height: 100vh;
+  height: 30rem;
   width: 100%;
   z-index: 99;
   padding-top: 2.5rem;
 }
-@media only screen and (min-width: 48rem) {
+@media only screen and (min-width: 37.5rem) {
   .navigation__links {
     background-image: none;
     position: static;
@@ -554,13 +564,13 @@ h3 {
   color: var(--white);
   font-size: 1.25rem !important;
 }
-@media only screen and (min-width: 48rem) {
+@media only screen and (min-width: 37.5rem) {
   .navigation__links__link {
     color: var(--grey-300);
     font-size: 0.8215rem !important;
   }
 }
-@media only screen and (min-width: 48rem) and (hover: hover) {
+@media only screen and (min-width: 37.5rem) and (hover: hover) {
   .navigation__links__link:hover {
     color: var(--grey-900);
   }
@@ -671,7 +681,7 @@ main {
 }
 @media only screen and (min-width: 75rem) {
   .section-cta {
-    padding: 4.25rem 5rem;
+    padding: 3.815rem 5rem;
   }
 }
 .section-cta h2 {
